@@ -15,6 +15,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'To-Do App',
       darkTheme: ThemeData.dark(), // Replace with AppTheme if needed
       themeMode: ThemeMode.system,
