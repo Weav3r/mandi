@@ -1,10 +1,11 @@
 import 'package:appwrite/appwrite.dart';
+import 'package:mandi/core/utils/appwrite_config.dart';
 
-final client = Client();
+final client = Client()
+  ..setEndpoint(AppwriteConstants.endpoint)
+  ..setProject(AppwriteConstants.projectId);
 
-Future<void> initAppwrite() async {
-  client
-      .setEndpoint('https://fra.cloud.appwrite.io/v1')
-      .setProject('682dabbd002f9fb97490');
-  // .setSelfSigned(status: true); // Only for local dev
-}
+// Expose service instances
+final databases = Databases(client);
+final account = Account(client);
+// Add storage, functions, etc. as needed

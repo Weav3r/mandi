@@ -22,6 +22,7 @@ dependencies:
   # GoRouter for routing
   go_router: ^14.6.2
 
+  flutter_slidable: ^3.0.0
   # UI
   cupertino_icons: ^1.0.6
 

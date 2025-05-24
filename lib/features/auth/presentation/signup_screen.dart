@@ -35,11 +35,13 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
         password: _passwordCtrl.text,
         name: _nameCtrl.text.trim(),
       );
+
       await controller.login(
         email: _emailCtrl.text.trim(),
         password: _passwordCtrl.text,
       );
-      if (mounted) context.go('/home');
+
+      // ❌ Don't call context.go('/home')
     } catch (e) {
       setState(() => _error = 'Signup failed: ${e.toString()}');
     } finally {
